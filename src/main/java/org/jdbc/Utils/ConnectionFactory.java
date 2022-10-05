@@ -15,10 +15,10 @@ public class ConnectionFactory {
     private static final Logger LOG = LoggerFactory.getLogger(ConnectionFactory.class);
 
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         Connection con = null;
         try {
-            con = DriverManager.getConnection(URL,USER,PASS);
+            con = DriverManager.getConnection(URL, USER, PASS);
             LOG.info("Connessione effettuata correttamente!");
         } catch (SQLException e) {
             LOG.info("Connessione non effettuata!");
@@ -29,7 +29,6 @@ public class ConnectionFactory {
 
     public static void close(Connection con) {
         try {
-            LOG.info("Tentativo chiusura connessione");
             con.close();
             LOG.info("Chiusura connessione avvenuta");
         } catch (SQLException e) {
